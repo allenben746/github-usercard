@@ -3,8 +3,11 @@
            https://api.github.com/users/<your name>
 */
 
-const axios = require('axios');
+
 axios.get('https://api.github.com/users/allenben746')
+  .then(data => {
+    console.log(data)
+  })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
