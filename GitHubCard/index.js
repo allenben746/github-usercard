@@ -35,6 +35,8 @@ const followersArray = [];
 
 function createGitHubCard() {
 
+
+  //Creates the boilerplate for the elements
   const card = document.createElement('div')
   const profileImg = document.createElement('img')
   const cardInfo = document.createElement('div')
@@ -46,7 +48,23 @@ function createGitHubCard() {
   const followerCount = document.createElement('p')
   const followingCount = document.createElement('p')
   const bio = document.createElement('p')
+
+  //Appends elements
+  card.appendChild(profileImg, cardInfo);
+  cardInfo.appendChild(
+    name,
+    username,
+    location,
+    linkContainer,
+    followerCount,
+    followingCount,
+    bio
+    )
+  linkContainer.appendChild(link);
 }
+
+
+
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
 
