@@ -33,7 +33,7 @@ axios.get('https://api.github.com/users/allenben746')
 const followersArray = [];
 
 
-function createGitHubCard() {
+function createGitHubCard(user) {
 
 
   //Creates the boilerplate for the elements
@@ -61,6 +61,16 @@ function createGitHubCard() {
     bio
     )
   linkContainer.appendChild(link);
+
+  //Gives elements data from the user parameter
+  profileImg.src = `${user.data.avatar_url}`;
+  name.textContent = `${user.data.name}`;
+  username.textContent = `${user.data.login}`;
+  location.textContent = `${user.data.location}`
+  link.href = `${user.data.html_url}`;
+  followerCount.textContent = `${user.data.followers}`;
+  followerCount.textContent = `${user.data.following}`;
+  bio.textContent = `${user.data.bio}`;
 }
 
 
@@ -85,10 +95,3 @@ function createGitHubCard() {
 
 */
 
-/* List of LS Instructors Github username's: 
-  tetondan
-  dustinmyers
-  justsml
-  luishrd
-  bigknell
-*/
